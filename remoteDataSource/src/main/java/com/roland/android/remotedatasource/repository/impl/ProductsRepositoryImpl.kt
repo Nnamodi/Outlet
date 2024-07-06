@@ -15,7 +15,7 @@ class ProductsRepositoryImpl : ProductsRepository, KoinComponent {
 
 	private val productsService : ProductsService by inject()
 
-	override suspend fun fetchItems(): Flow<List<Item>> = flow {
+	override fun fetchItems(): Flow<List<Item>> = flow {
 		emit(
 			productsService.fetchItems(
 				orgId = BuildConfig.ORGANIZATION_ID,

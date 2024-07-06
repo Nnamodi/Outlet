@@ -7,12 +7,12 @@ import retrofit2.http.Query
 
 interface ProductsService {
 
-	@GET("/products?{organization_id}&{size}&{Appid}&{Apikey}")
+	@GET("/products")
 	suspend fun fetchItems(
-		@Path("organization_id") orgId: String,
+		@Query("organization_id") orgId: String,
 		@Query("Appid") appId: String,
 		@Query("Apikey") apiKey: String,
-		@Query("size") size: Int = 10
+		@Query("size") size: Int = 15
 	): ListModel
 
 }

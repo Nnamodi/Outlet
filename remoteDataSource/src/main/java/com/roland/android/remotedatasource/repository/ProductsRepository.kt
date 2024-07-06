@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface ProductsRepository {
 
-	suspend fun fetchItems(): Flow<List<Item>>
+	fun fetchItems(): Flow<List<Item>>
 
 }

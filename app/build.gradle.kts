@@ -52,6 +52,7 @@ android {
 dependencies {
 
 	// android
+	implementation(libs.androidx.appcompat)
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
 
@@ -67,6 +68,7 @@ dependencies {
 
 	// di
 	implementation(platform(libs.koin.bom))
+	implementation(libs.koin.android)
 	implementation(libs.koin.core)
 
 	// other modules
