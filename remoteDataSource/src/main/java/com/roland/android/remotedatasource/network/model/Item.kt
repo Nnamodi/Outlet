@@ -9,8 +9,10 @@ data class Item(
 	val id: String = "",
 	@Json(name = "name")
 	val name: String = "",
+	@Json(name = "description")
+	val price: String = "", // a workaround concerning the bug I narrated in `Price` file
 	@Json(name = "photos")
 	val photos: List<Image> = emptyList(),
 	@Json(name = "current_price")
-	val price: List<Price> = emptyList()
+	val currentPrice: List<Price> = emptyList()
 )

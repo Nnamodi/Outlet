@@ -1,14 +1,16 @@
 package com.roland.android.remotedatasource
 
+import android.content.Context
+
 object Constant {
 
 	internal const val TIMBU_BASE_URL = "https://api.timbu.cloud"
 	const val BASE_IMAGE_URL = "https://api.timbu.cloud/images/"
 
-	fun Throwable.errorMessage(): String = when (this) {
-		is java.net.UnknownHostException -> "No internet connection"
-		is javax.net.ssl.SSLException -> "Connection aborted"
-		else -> message ?: "Oops... Something broke"
+	fun Throwable.errorMessage(context: Context): String = when (this) {
+		is java.net.UnknownHostException -> context.getString(R.string.no_internet_connection)
+		is javax.net.ssl.SSLException -> context.getString(R.string.connection_aborted)
+		else -> context.getString(R.string.oops_something_broke)
 	}
 
 }

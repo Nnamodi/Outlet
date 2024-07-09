@@ -46,9 +46,9 @@ import com.roland.android.outlet.R
 import com.roland.android.outlet.ui.theme.OutletTheme
 import com.roland.android.remotedatasource.Constant.BASE_IMAGE_URL
 import com.roland.android.remotedatasource.Constant.errorMessage
+import com.roland.android.remotedatasource.Result
 import com.roland.android.remotedatasource.network.model.Item
 import com.roland.android.remotedatasource.usecase.GetProductsUseCase
-import com.roland.android.remotedatasource.Result
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -91,7 +91,7 @@ fun ProductsScreen(
 		if (data !is Result.Error) return@LaunchedEffect
 		scope.launch {
 			val result = snackbarHostState.showSnackbar(
-				message = data.throwable.errorMessage(),
+				message = data.throwable.errorMessage(context),
 				actionLabel = context.getString(R.string.retry)
 			)
 			if (result == ActionPerformed) retry()
@@ -155,8 +155,9 @@ private fun Product(
 			fontWeight = FontWeight.Medium,
 			softWrap = false
 		)
+		val remotePrice = item.currentPrice[0].values.firstOrNull()
 		Text(
-			text = "€${item.price.find { it.currency == "EUR" }?.values?.last()}",
+			text = "€${remotePrice ?: item.price}",
 			modifier = Modifier
 				.padding(start = 10.dp, bottom = 20.dp)
 				.alpha(0.7f)

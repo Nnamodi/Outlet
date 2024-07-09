@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="connection_aborted">Connection aborted</string>
+    <string name="oops_something_broke">Oops… Something broke</string>
+</resources>

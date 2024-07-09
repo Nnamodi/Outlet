@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Outlet</string>
     <string name="retry">RETRY</string>
-    <string name="error_message">Oops... Something broke</string>
 </resources>

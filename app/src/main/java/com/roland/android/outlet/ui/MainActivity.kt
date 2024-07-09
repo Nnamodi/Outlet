@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
 		setContent {
 			val viewModel: ProductsViewModel by inject()
 
-			OutletTheme(true) {
+			OutletTheme {
 				ProductsScreen(
 					data = viewModel.data,
 					retry = viewModel::retry
