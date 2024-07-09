@@ -24,7 +24,7 @@ This sample shopping app is a task from HNG11 stage 2.
     `dataRemoteSource` - Fetches data from internet and manipulates it
 <br/>
 
-  ***Explore the virtualized demonstration of the release apk version [here](https://appetize.io/app/arrc6dg3fu5gxilmkmf2exgwui)***
+  ***Explore the virtualized demonstration of the release apk version [here](https://appetize.io/app/b_qgxzowdyi4gbo6jlblutukpyne)***
 
   ***Or you can install the apk from below 👇🏽***
 
